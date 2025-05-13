@@ -1,0 +1,49 @@
+package main
+
+import "fmt"
+
+// Import package from standard Lib
+const name = "Go Lang"
+
+// lol := 10 // Not work
+
+// -------------- declare Multiple Constant ------ at same time
+const (
+	port = 8000
+	host = "localhost"
+)
+
+func main() {
+	// fmt.Println("Hello World!!!!") // Hello World
+	// ---------------- Simple Values -------------------
+	/*
+		fmt.Println(1+1);
+		fmt.Println(true,false)
+		fmt.Println(3.14)
+		fmt.Println(3.14 + 3.14)
+	*/
+	// --------------- Simple values end here -----------------
+
+	// --------------- Variables start here -----------------
+	/*
+		// var name string = "Utsav"
+		// ---- Simple Way
+		// var name = "Utsav" // Infer type here
+		// var isMale = true
+		// var age int = 18
+
+		// Shorthand syntax -> variable decalre and set some value
+		// Used when we know the type of the value beforehand
+		name := "Utsav"
+		age := 18
+		isMale := true
+		macBookPrice := 999.9 // var macPrice fload64 := 999.9 //  var macPrice  := 999.9
+		fmt.Println(name, age,isMale,macBookPrice)*/
+	// --------------- Variables end here -----------------
+	// --------------- Constants start here -----------------
+	const name string = "Go Lang 2"
+	// name = "Lol" // not allowed
+	const age = 18
+	fmt.Print(name)
+	// --------------- Constants end here -----------------
+}

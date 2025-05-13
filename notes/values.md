@@ -1,0 +1,3 @@
+- in Go lang each varaible we have to used other wise go compiler give error
+- `int` have many types like int8 , int16 , int32 , int64 but majority time we just used int and go compiler optimize it as per CPU architure
+- Constand are the value which remain the same during the enitre program end do not change decalre using const keyword same as JavaScript
