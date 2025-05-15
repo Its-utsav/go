@@ -9,6 +9,7 @@
 
 1. [Values](notes/values.md)
 2. [For Keyword , condition statement](notes/for-if-switch.md)
+3. [Array](notes/array-map-slice-range.md)
 
 ## Why go
 
