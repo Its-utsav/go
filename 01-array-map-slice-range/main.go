@@ -74,4 +74,65 @@ func main() {
 	// 	fmt.Println("Slice are not same")
 	// }
 	// -----------------------------------------------------------------------
+
+	// ---------------------------- Map start here --------------------------------
+	// m := make(map[string]string)
+	// m["name1"] = "Go Lang"
+	// m["name2"] = "Python"
+	// m["name3"] = "C++"
+	// m["name4"] = "C"
+	// fmt.Println(m["Number"])
+	// m := make(map[int]int)
+	// m[1] = 1
+	// m[2] = 2
+	// delete(m, 2)
+	// fmt.Println((m))
+	// age := map[string]int{"utsav": 18, "sam": 26}
+	// age["rahul"] = 24
+	// // clear(age)
+	// fmt.Println(age)
+	// value, exists := age["utsav"]
+	// if exists {
+	// 	fmt.Println("Value in map", value)
+	// } else {
+	// 	fmt.Println("Key is not in map")
+	// }
+	// m1 := map[string]int{"utsav": 18, "sam": 26}
+	// m2 := map[string]int{"utsav": 8, "sam": 26}
+	// fmt.Println(maps.Equal(m1, m2))
+	// ---------------------------- Map end Here  ---------------------------------
+
+	// ---------------------------- range start Here  ------------------------------
+	nums := make([]int, 0)
+	nums = append(nums, 10)
+	nums = append(nums, 12)
+	nums = append(nums, 33)
+	// for i := 0; i < len(nums); i++ {
+	// 	fmt.Println(nums[i])
+	// }
+	sum := 0
+	for _, num := range nums {
+		sum += num
+	}
+	// fmt.Println(nums, sum)
+
+	// age := map[string]int{"utsav": 18, "rahul": 19, "sam": 22}
+
+	// for key, value := range age {
+	// 	fmt.Println(key, value)
+	// }
+
+	// for key := range age {
+	// 	fmt.Println(key)
+	// }
+
+	// for b, unicode := range "utsav" {
+	// 	fmt.Println(b, unicode)
+	// }
+
+	// for b, unicode := range "🔥utsav" { // Inetrsting
+	// 	fmt.Println(b, unicode)
+	// 	fmt.Println(b, string(unicode))
+	// }
+	// ---------------------------- range end Here  ---------------------------------
 }

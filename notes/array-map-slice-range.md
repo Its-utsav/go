@@ -3,6 +3,9 @@
   - [Slice package](#slice-package)
   - [Length](#length)
   - [Capacity](#capacity)
+- [Maps](#maps)
+  - [map package](#map-package)
+- [Ranges](#ranges)
 
 
 ## Array
@@ -80,10 +83,75 @@ fmt.Println(nums[:6]) // till 6 index but 6th index not included
 ```
 ### Slice package
 - `slices.Equal(s1, s2)` - compare slice if length not same than return false , other wise check in increasing order 
-
+- and nay more package
 ### Length 
 - return the number of element in slice or array
 ### Capacity
 - return the total number of element slice can store before resize (It just double it)
 - It is greater than `len`
 - Used for memory Optimization
+
+
+## Maps
+- Maps in go lang is similar to Dictionaries in python (Object in JavaScript ), fast lookups , update and delete
+- `m := make(map[keyType]valueType)`
+
+```go
+age := map[string]int{"Utsav": 18} // literal way but one key value required
+age["rahul"] = 24
+fmt.Println(age)
+```
+
+- If key not does exits in map than it return zero value
+- `len(map)` return the count of key value pairs
+- `delete(map,key)` delete key from map
+- `clear(map)` clear map
+
+- in go we can return multiple item 
+- `value, isExists := age["utsav"]` - 1st return value of a key and 2nd return Boolean indicating the existence of key in map
+
+### map package
+
+- `maps.Equal(m1, m2)` - return Boolean value by comparing values of a keys
+
+
+## Ranges
+- mainly used for iterating over Data Structures 
+
+```go
+nums := make([]int, 0)
+nums = append(nums, 10)
+nums = append(nums, 12)
+nums = append(nums, 33)
+
+sum := 0
+for _, num := range nums { // _ is index
+	sum += num
+}
+
+for index, value := range ds { 
+	// sum += num
+}
+
+fmt.Println(nums, sum)
+
+age := map[string]int{"utsav": 18, "rahul": 19, "sam": 22}
+
+for key, value := range age {
+	fmt.Println(key, value)
+}
+
+for key := range age {
+	fmt.Println(key) // print all keys
+}
+
+for b, unicode := range "utsav" {
+	fmt.Println(b, unicode)
+}
+
+for b, unicode := range "🔥utsav" {
+	fmt.Println(b, unicode)
+  fmt.Println(b, string(unicode))
+}
+
+```
