@@ -10,6 +10,7 @@
 1. [Values](notes/values.md)
 2. [For Keyword , condition statement](notes/for-if-switch.md)
 3. [Array Map Slice Range](notes/array-map-slice-range.md)
+4. [Function](notes/functions.md )
 
 ## Why go
 
