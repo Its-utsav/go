@@ -62,3 +62,40 @@ func doSomething(int) func(a int) int {
 }
 fmt.Println(doSomething(1)(1)) // doSomething function -> call -> print 10 
 ```
+
+## Variadic Functions
+- a function that takes `n` number of arguments like `fmt.Println`
+
+```go
+func sumOfRandomNumbers(nums ...int) int { // we can even set any
+	total := 0
+	for _, num := range nums {
+		total += num
+	}
+	return total
+}
+```
+
+## closure in go
+- similar to `JavaScript` 
+- function remember its variables
+- in go we achieved through `anonymous functions`
+
+```go
+func counter() func() int {
+	var count int = 0
+	return func() int {
+		count += 1
+		return count
+	}
+}
+func main() {
+	count := counter()
+	fmt.Println(count()) // 1
+	fmt.Println(count()) // 2
+	fmt.Println(count()) // 3
+	fmt.Println(count()) // 4
+	fmt.Println(count()) // 5
+	fmt.Println(count()) // 6
+}
+```
