@@ -198,4 +198,108 @@ func main() {
 - after using interface , PayPal gateway were added without need of any code modification , just by writing more code 
 - just remember that struct should implements all methods that is define in interface and method signature should be same
 ## enums
+- Enumerations (enums) special data type that enables for a variable to be a set of predefined constants
+- Named constates
+- Grounded related types
+- No supported by Go lang but can implement using constants 
+
+```go
+package main
+
+import "fmt"
+
+type OrderStatus int
+
+const (
+	Recevied  OrderStatus = iota // 0
+	Confirmed                    // 1
+	Prepared                     // 2
+	Delivered                    // 3
+)
+
+func changeOrderStatus(status OrderStatus) {
+	fmt.Println("Change Order to ", status)
+}
+func main() {
+	changeOrderStatus(Delivered)
+}
+```
+- `iota` is a special data type in go lang which is used for assign sequential value **ONLY WORKS WITH INTERGER**
+
+
+- string example
+
+```go
+package main
+
+import "fmt"
+
+type OrderStatus string
+
+const (
+	Recevied  OrderStatus = "recevied"
+	Confirmed             = "confirmed"
+	Prepared              = "prepared"
+	Delivered             = "delivered"
+)
+
+func changeOrderStatus(status OrderStatus) {
+	fmt.Println("Change Order to ", status)
+}
+func main() {
+	changeOrderStatus(Recevied)
+	changeOrderStatus("recevied")
+}
+```
 ## generics
+- introduce in go lang version 1.18
+- generics also known as parametric polymorphism or templates  
+- It allow programmer write code more reusable and flexible that support multiple datatype 
+
+```go
+func printSlice(slice []int) {
+	for _, value := range slice {
+		fmt.Println(value)
+	}
+}
+```
+- restrict to use only integer slice if want to print string slice than write same code again for string
+
+```go
+func printSlice[T any](slice []T) {
+//func printSlice[T interface{}](slice []T) {
+	for _, value := range slice {
+		fmt.Print(value)
+	}
+}
+```
+
+
+---
+
+
+- allow types of the string , int and Boolean
+
+```go
+func printSlice[T string | int | bool](slice []T) {
+	for _, value := range slice {
+		fmt.Println(value)
+	}
+}
+```
+---
+
+- with stack
+```go
+type Stack[T int | string] struct {
+	elements []T
+}
+```
+
+```go
+func printSlice[T comparable](slice []T) {
+	for _, value := range slice {
+		fmt.Println(value)
+	}
+}
+```
